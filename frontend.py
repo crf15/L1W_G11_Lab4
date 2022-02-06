@@ -38,7 +38,7 @@ my_devices = get_my_devices()
 if len(my_devices) <= 0:
     raise ValueError("No devices available for this user.")
 
-header = html.H1(children=f"IoT Baby Alert Monitor System")
+header = html.H1(children=f"L1W_G11 IoT Baby Alert Monitor System")
 
 subheader = html.H4(children=f"{firstname.capitalize()} {lastname.capitalize()}")
 
