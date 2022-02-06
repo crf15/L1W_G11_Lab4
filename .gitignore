@@ -2,5 +2,6 @@
 mydbconfig.py
 .idea*
 addusers.py
+add_authorized_users.py
 
 
