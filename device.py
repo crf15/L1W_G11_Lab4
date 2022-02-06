@@ -38,10 +38,19 @@ def main():
         .child(backend._device_info['serial']) \
         .child('leds') \
         .stream(led_stream_handler)
+       
+    clear_leds(backend)
 
-    # to be implemented by students
-    def clear_leds():
-        raise NotImplementedError("clear_leds should be implemented by students.")
+# to be implemented by students
+def clear_leds(backend):
+    # constantly check if SenseHat joystick was pressed
+    # if joystick pressed, clear all leds
+    while True:
+        for event in sense.stick.get_events():
+            # clear SenseHat leds if joystick is pressed (middle button)
+            if event.direction == "middle":
+                backend.clear_leds(backend.get_device_id())
+    
 
 if __name__ == '__main__':
     main()
