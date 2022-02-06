@@ -11,7 +11,7 @@ def init_screen(backend):
     else:
         raise Exception("This is not a Raspberry pi. This file should be run from a RPi.")
 
-def led_stream_handler(message):
+def led_stream_handler(message):   
     if message['event'] =='put':
         if message ['path'][1:].isnumeric():
             ledn = int(message ['path'][1:])
